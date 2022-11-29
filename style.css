@@ -1,0 +1,180 @@
+*{
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --darkModeBackground-color: #121214;
+  --darkModeCard-color: #29292E;
+  --darkModeCardSelected-color: #0A3442;
+  --darkModeIconCard-color: #C4C4CC;
+
+  --lightModeBackground-color: #FFFFFF;
+  --lightModeCard-color: #E1E1E6;
+  --lightModeCardSelected-color: #02799D;
+  --lightModeIconCard-color: #323238;
+
+  font-size: 62.5%;
+}
+
+body{
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19.2rem;
+}
+
+.hide{
+  display: none;
+}
+
+.buttonDarkMode,
+.buttonLightMode{
+  position: absolute;
+  top: 6.4rem;
+  right: 6.4rem;
+}
+
+.timerDisplay{
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6166rem;
+  font-weight: 500;
+  line-height: 14.8rem;
+
+  display: flex;
+}
+
+.buttonsDisplay{
+  display: flex;
+  gap: 4rem;
+}
+
+.cardsDisplay{
+  display: grid;
+  grid-template-columns: 13.8rem 13.8rem;
+  gap: 3.2rem;
+}
+
+.cardsDisplay div{
+  position: relative;
+}
+
+.cardsDisplay div div{
+  width: 13.8rem;
+  height: 15.2rem;
+
+  border-radius: 2.4rem;
+  padding-top: 2.4rem;
+  padding-bottom: 7.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.cardsDisplay input{
+  appearance: none;
+  width: 9rem;
+  height: 0.4rem;
+  border-radius: 0.5rem;
+
+  position: absolute;
+  bottom: 2.4rem;
+  right: 2.4rem;
+}
+
+input::-webkit-slider-thumb{
+  appearance: none;
+  background: var(--lightModeBackground-color);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 9999px;
+}
+
+.buttonDarkMode, 
+.buttonLightMode, 
+.buttonsDisplay div, 
+.cardsDisplay div, input{
+  cursor: pointer;
+}
+
+
+/* configure dark mode */
+.darkMode{
+  background: var(--darkModeBackground-color);
+}
+
+.darkMode .timerDisplay{
+  color: var(--lightModeBackground-color);
+}
+
+.darkMode .buttonsDisplay div:hover path, 
+.darkMode .playTimer svg path{
+  fill: var(--darkModeCardSelected-color);
+}
+
+.darkMode section div div{
+  background: var(--darkModeCard-color);
+}
+.darkMode section div svg path{
+  fill: var(--darkModeIconCard-color);
+}
+
+.darkMode .cardSelected{
+  background: var(--darkModeCardSelected-color);
+}
+.darkMode input.cardSelected{
+  background: var(--lightModeBackground-color);
+}
+.darkMode .cardSelected svg path,
+.lightMode .cardSelected svg path{
+  fill: var(--lightModeBackground-color);
+}
+
+
+/* configure light mode */
+.lightMode{
+  background: var(--lightModeBackground-color);
+}
+
+.lightMode .timerDisplay{
+  color: var(--lightModeIconCard-color);
+}
+
+.lightMode .buttonsDisplay div path{
+  fill: var(--lightModeIconCard-color);
+}
+.lightMode .buttonsDisplay div:hover path, 
+.lightMode .playTimer svg path{
+  fill: var(--lightModeCardSelected-color);
+}
+
+.lightMode section div div{
+  background: var(--lightModeCard-color);
+} 
+.lightMode section div svg path{
+  fill: var(--lightModeIconCard-color);
+}
+
+.lightMode input{
+  background: var(--darkModeCard-color);
+}
+.lightMode input::-webkit-slider-thumb{
+  background: var(--darkModeCard-color);
+}
+
+.lightMode .cardSelected{
+  background: var(--lightModeCardSelected-color);
+}
+.lightMode input.cardSelected{
+  background: var(--lightModeBackground-color);
+}
+.lightMode input.cardSelected::-webkit-slider-thumb{
+  background: var(--lightModeBackground-color);
+}
